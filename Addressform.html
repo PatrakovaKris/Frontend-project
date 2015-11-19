@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EPAM Front-end project</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="page">
+    <header class="page__header header">
+        <div class="header__logo">
+            <a class="header__logoLink" href="Categories.html"><img class="header__logoImage" src="images/flogo.png" alt="logo" title="" /></a>
+        </div>
+        <!-- search-form, buttons -->
+        <div class="header__links">
+            <a href="Cart.html" class="header__link">&#xf07a;</a>
+            <a href="Login.html" class="header__link">&#xf007;</a>
+        </div>
+        <div class="header__searchForm searchForm">
+            <form class="searchForm__form" action="">
+                <input class="searchForm__input" type="text"  maxlength="128" placeholder="Найти...">
+                <input class="searchForm__button" type="submit"  value="&#xf002;">
+            </form>
+        </div>
+    </header>
+    <main class="page__main main">
+        <form class="main__addressForm addressForm">
+            <div class="addressForm__section addressForm__section--shipping">
+                <h3 class="addressForm__subheader">Адрес доставки</h3>
+                <label class="addressForm__label">Страна</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Город</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Адрес</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Почтовый индекс</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+            </div>
+            <div class="addressForm__section addressForm__section--billing">
+                <h3 class="addressForm__subheader">Адрес представления счета</h3>
+                <label class="addressForm__label">Страна</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Город</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Адрес</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label">Почтовый индекс</label>
+                <input class="addressForm__input" type="text" placeholder="" />
+                <label class="addressForm__label addressForm__label--big">Адрес представления счета совпадает с адресом доставки</label>
+                <input class="addressForm__checkbox" type="checkbox" />
+            </div>
+            <div class="addressForm__section addressForm__section--submit">
+                <input class="addressForm__submit" type="submit" value="Перейти к оплате" />
+            </div>
+        </form> 
+    </main>
+    <footer class="page__footer footer">&copy; EPAM Izhevsk, Patrakova-Vitkovskii, 2015</footer>
+</div>
+</body>
+</html>

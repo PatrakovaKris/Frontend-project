@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EPAM Front-end project</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="page">
+    <header class="page__header header">
+        <div class="header__logo">
+            <a class="header__logoLink" href="Categories.html"><img class="header__logoImage" src="images/flogo.png" alt="logo" title="" /></a>
+        </div>
+        <!-- search-form, buttons -->
+        <div class="header__links">
+            <a href="Cart.html" class="header__link">&#xf07a;</a>
+            <a href="Login.html" class="header__link">&#xf007;</a>
+        </div>
+        <div class="header__searchForm searchForm">
+            <form class="searchForm__form" action="">
+                <input class="searchForm__input" type="text"  maxlength="128" placeholder="Найти...">
+                <input class="searchForm__button" type="submit" value="&#xf002;">
+            </form>
+        </div>
+    </header>
+    <main class="page__main main">
+        <form class="main__orderForm orderForm">
+            <input class="orderForm__input orderForm__input--name" type="text" />
+            <input class="orderForm__input orderForm__input--number" type="text" />
+            <input class="orderForm__input orderForm__input--expireMonth" type="text" />
+            <input class="orderForm__input orderForm__input--expireYear" type="text" />
+            <input class="orderForm__input orderForm__input--csv" type="text" />
+            <input class="orderForm__input orderForm__submit" type="submit" value="Завершить оплату" />
+        </form>
+    </main>
+    <footer class="page__footer footer">&copy; EPAM Izhevsk, Patrakova-Vitkovskii, 2015</footer>
+</div>
+</body>
+</html>

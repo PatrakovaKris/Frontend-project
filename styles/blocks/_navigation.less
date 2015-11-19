@@ -1,0 +1,26 @@
+// main: ../style.less
+
+.navigation {
+    flex: 0 0 250px;
+    align-self: stretch;
+    border-right: 1px solid black;
+    
+    .navigation__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .navigation__item {}
+    .navigation__link {
+        display: block;
+        padding: 14px 18px;
+        color: black;
+        
+        &.navigation__link--current {
+            background: rgb(120,120,120);
+            color: rgb(240,240,240);
+        }
+        &:hover {
+        }
+    }
+}

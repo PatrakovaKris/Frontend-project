@@ -1,0 +1,58 @@
+// main: ../style.less
+
+@import "../_mixins.less";
+
+.orderForm {
+    position: relative;
+    width: 600px;
+    height: 334px;
+    margin: 50px auto;
+    background-image: url(../images/creditcardbg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    .orderForm__input {
+        position: absolute;
+        height: 28px;
+        padding: 0 5px;
+        line-height: 28px;
+        
+        &.orderForm__input--name {
+            width: 290px;
+            top: 133px;
+            left: 66px;
+            word-spacing: 14px;
+        }
+        &.orderForm__input--number {
+            width: 290px;
+            top: 180px;
+            left: 66px;
+            word-spacing: 14px;
+        }
+        &.orderForm__input--expireMonth {
+            width: 55px;
+            top: 216px;
+            left: 238px;
+        }
+        &.orderForm__input--expireYear {
+            width: 55px;
+            top: 216px;
+            left: 300px;
+        }
+        &.orderForm__input--csv {
+            width: 43px;
+            top: 153px;
+            left: 486px;
+        }
+    }
+    .orderForm__submit {
+        .button();
+        
+        position: absolute;
+        width: 120px;
+        height: 30px;
+        bottom: 0;
+        left: 50%;
+        margin-left: -60px;
+    }
+}

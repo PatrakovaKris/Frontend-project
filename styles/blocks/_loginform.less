@@ -1,0 +1,58 @@
+// main: ../style.less
+
+@import "../_mixins.less";
+
+.loginForm {
+    background-color: #f5f5f5;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    margin: 100px auto;
+    width: 400px;
+    box-shadow: 1px 1px 3px #03052d;
+    text-align: center;
+    padding: 10px;
+    
+    .loginForm__form{
+        width: 170px;
+        text-align: center;
+        margin: auto;
+    }
+    .loginForm__header{
+        text-align: left;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .loginForm__input{
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    .loginForm__checkbox{}
+    .loginForm__label{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        text-align: left;
+        &.loginForm__label--checkbox{}
+    }
+    .loginForm__submit{
+        .button();
+//         background: #eceefe;
+//        border: 1px solid #03052d;
+//        padding: 5px;
+//        border-radius: 5px;
+//        text-align: center;
+//        width: 100%;
+    }
+    .loginForm__register{
+        text-align: right;
+        margin-top: 5px;
+    }
+    .loginForm__registerLink{
+        text-decoration: none;
+    }
+    .loginForm__registerLink:active{
+        color: #cfd4fc;
+    }
+
+}

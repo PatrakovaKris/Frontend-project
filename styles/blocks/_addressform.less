@@ -1,0 +1,41 @@
+// main: ../style.less
+
+.addressForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .addressForm__section {
+        flex: 0 0 35%;
+        padding: 10px;
+        
+        &.addressForm__section--shipping {}
+        &.addressForm__section--billing {}
+        &.addressForm__section--submit {
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+    .addressForm__subheader {}
+    .addressForm__label {
+        display: inline-block;
+        width: 40%;
+        margin-right: -3px;
+        margin-bottom: 5px;
+        
+        &.addressForm__label--big {
+            width: 60%;
+        }
+    }
+    .addressForm__input {
+        width: 60%;
+        margin-right: -3px;
+    }
+    .addressForm__checkbox {
+        float: left;
+        margin-right: 10px;
+    }
+    .addressForm__submit {
+        width: 200px;
+    }
+}
