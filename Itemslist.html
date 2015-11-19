@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>EPAM Front-end project</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <div class="page">
@@ -19,7 +19,7 @@
         <div class="header__searchForm searchForm">
             <form class="searchForm__form" action="">
                 <input class="searchForm__input" type="text"  maxlength="128" placeholder="Найти...">
-                <input class="searchForm__button" type="submit"  value="Поиск">
+                <input class="searchForm__button" type="submit"  value="&#xf002;">
             </form>
         </div>
     </header>
@@ -32,8 +32,20 @@
             </ul>
         </div>
         <div class="main__products products">
-            <a href="" class="products__changeView">Отобразить списком</a>
+            <div class="products__changeView">
+                <a href="" class="products__viewOption">Отобразить сеткой</a>
+                <a href="" class="products__viewOption products__viewOption--current">Отобразить списком</a>
+            </div>
             <ul class="products__list products__list--list">
+                <li class="products__item">
+                    <a href="" class="products__figure">
+                        <img class="products__img" src="images/1.jpg" />
+                    </a>
+                    <a href="" class="products__name">Fender AC-560</a>
+                    <span class="products__price">600</span>
+                    <p class="products__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="" class="products__addtoCart">Добавить в корзину</a>
+                </li>
                 <li class="products__item">
                     <a href="" class="products__figure">
                         <img class="products__img" src="images/1.jpg" />
