@@ -1,4 +1,117 @@
 // main: ../style.less
+@import "../_mixins.less";
+.productDescription{
+        flex: 0 0 100%;
+        padding:10px;
+    .descriptionBlock__header{}
+    .descriptionBlock__text{
+        margin-bottom:5px;
+        color: #616161;
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .descriptionBlock__infoPrice{
+        font-size: 40px;
+        color:#f26221;
+        text-align: right;
+    }
+    .descriptionBlock__quantity{}
+    .quantity{
+        margin:10px;
+        padding: 10px;
+        .quantity__form{}
+        .quantity__header{
+            margin-bottom: 5px;
+            color: #616161;
+            font-size: 15px;
+            line-height: 18px;
+        }
+        .quantity__selection{
+            float:left;
+            width: 80px;
+        }
+        .quantity__incarlink{}
+        .quantity__incartButton{
+            float:right;
+            
+        }
+    }
+    
+    .descriptionBlock__icons{}
+    .icons{
+    
+        .icons__IconBlock{
+            display: flex;
+            width: 100%;
+        }
+        .icons__listIcon{
+            padding: 0px;
+            list-style-type: none;
+        }
+        .icons__iconItem{
+            display: inline-block;
+            margin-right: 10px;
+            list-style-type: none;
+        }
+        .icons__image{
+            width: 50%;
+            height: 50%;
+        }
+    }
+   
+}
+
+@media (min-width: 768px) {
+.productDescription{
+        flex: 0 0 30%;
+        padding:10px;
+    .descriptionBlock__header{}
+    .descriptionBlock__text{
+    }
+    .descriptionBlock__infoPrice{
+        text-align: center;
+    }
+    .descriptionBlock__quantity{}
+    .quantity{
+        .quantity__form{}
+        .quantity__header{
+        }
+        .quantity_selection{
+            float:center;
+            width: 80px;
+        }
+        .quantity__incarlink{}
+        .quantity__incartButton{
+            float:center;
+            
+        }
+    }
+    
+    .descriptionBlock__icons{}
+    .icons{
+    
+        .icons__IconBlock{
+            display: flex;
+            width: 100%;
+        }
+        .icons__listIcon{
+            padding: 0px;
+            list-style-type: none;
+        }
+        .icons__iconItem{
+            display: inline-block;
+            margin-right: 10px;
+            list-style-type: none;
+        }
+        .icons__image{
+            width: 50%;
+            height: 50%;
+        }
+    }
+   
+}
+}
+@media (min-width: 992px) {
 .productDescription{
         flex: 0 0 45%;
         padding:10px;
@@ -52,10 +165,11 @@
             margin-right: 10px;
             list-style-type: none;
         }
-        .icons_image{
+        .icons__image{
             width: 50%;
             height: 50%;
         }
     }
    
+}
 }
