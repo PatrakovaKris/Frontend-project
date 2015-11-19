@@ -3,6 +3,38 @@
 @import "../_mixins.less";
 
 .orderForm {
+    width: 100%;
+    padding: 30px;
+    
+    .orderForm__input {
+        display: block;
+        width: 100%;
+        height: 28px;
+        margin-bottom: 10px;
+        padding: 0 5px;
+        line-height: 28px;
+        
+        &.orderForm__input--name {
+        }
+        &.orderForm__input--number {
+        }
+        &.orderForm__input--expireMonth {
+        }
+        &.orderForm__input--expireYear {
+        }
+        &.orderForm__input--csv {
+        }
+    }
+    .orderForm__submit {
+        .button();
+        
+        width: 120px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+.orderForm {
     position: relative;
     width: 600px;
     height: 334px;
@@ -55,4 +87,7 @@
         left: 50%;
         margin-left: -60px;
     }
+}
+}
+@media (min-width: 992px) {
 }
