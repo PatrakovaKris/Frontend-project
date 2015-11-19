@@ -2,22 +2,30 @@
 
 @import "../_mixins.less";
 .cartSum{
-    flex: 0 0 30%;
-    padding:20px;
-    margin-top: 20px;
-    font-size: 15px;
-    text-align: center;
-
-    .cartSum__header{}
-
-    .cartSum__summary{
-        color:#f26221;
+    display: none;
+}
+@media (min-width: 768px) {
+    .cartSum{
+        display: none;
     }
+}
+@media (min-width: 992px) {
+    .cartSum{
+        display: block;
+        flex: 0 0 30%;
+        padding:20px;
+        margin-top: 20px;
+        font-size: 15px;
+        text-align: center;
 
-    .cartSum__checkoutBlock{}
-    .cartSum__form{}
-    .cartSum__cartButton{
-        .button();
+        .cartSum__header{}
+
+        .cartSum__summary{
+            color:#f26221;
+        }
+        .cartSum__cartButton{
+            .button();
+        }
+
     }
-
 }

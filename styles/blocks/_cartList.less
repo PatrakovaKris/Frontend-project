@@ -2,7 +2,7 @@
 @import "../_mixins.less";
 .cart{
     padding:10px;
-    flex: 0 0 70%;
+    flex: 0 0 100%;
     margin-top: 20px;
     font-size: 15px;
 
@@ -12,10 +12,9 @@
         padding:10px;
         margin-left: 20px;
         margin-top: 20px;
-        border: 2px solid #cccccc;
-        border-radius: 5px;
         background-color: #f5f5f5;
-        box-shadow: 1px 1px 5px #777;
+        .block();
+
 
         &:nth-child(even){
             background-color: #f5f5dc;
@@ -34,8 +33,7 @@
                 box-shadow: 1px 1px 5px #777;
             }
             .gitarDescription__image{
-                width: 190px;
-                height: 100px;
+                width:100%
             }
             .gitarDescription__nameBlock{
                 float:right;
@@ -75,79 +73,13 @@
 }
 @media (min-width: 768px) {
     .cart {
-        padding: 10px;
-        flex: 0 0 70%;
-        margin-top: 20px;
-        font-size: 15px;
-
-        .cartList {
-            display: block;
-            overflow: hidden;
-            padding: 10px;
-            margin-left: 20px;
-            margin-top: 20px;
-            border: 2px solid #cccccc;
-            border-radius: 5px;
-            background-color: #f5f5f5;
+        .gitarDescription__imageBlock {
+            float: left;
+            width: 65%;
             box-shadow: 1px 1px 5px #777;
-
-            &:nth-child(even) {
-                background-color: #f5f5dc;
-            }
-            &:nth-child(odd) {
-                background-color: white;
-            }
-
-            .cartList__gitarDescription {
-            }
-            .gitarDescription {
-                float: left;
-                width: 50%;
-                .gitarDescription__imageBlock {
-                    float: left;
-                    width: 60%;
-                    box-shadow: 1px 1px 5px #777;
-                }
-                .gitarDescription__image {
-                    width: 190px;
-                    height: 100px;
-                }
-                .gitarDescription__nameBlock {
-                    float: right;
-                    width: 30%;
-                }
-                .gitarDescription__name {
-                    color: #f26221;
-                    text-decoration: none;
-                }
-
-            }
-            .cartList__gitarChoose {
-            }
-            .gitarChoose {
-                float: right;
-                width: 40%;
-                .gitarChoose__quantity {
-                    float: left;
-                    width: 50%;
-                }
-                .gitarChoose__quantityForm {
-                }
-                .gitarChoose__cartPrice {
-                    float: right;
-                    width: 35%;
-                    text-align: center;
-                    margin-top: -16px;
-                }
-                .gitarChoose__header {
-                    color: #f26221;
-                }
-                .gitarChoose__delete {
-                    color: #f26221;
-                    text-decoration: none;
-                }
-            }
-
+        }
+        .gitarDescription__image {
+            width: 100%
         }
     }
 }
@@ -159,35 +91,16 @@
         font-size: 15px;
 
         .cartList{
-            display:block;
-            overflow: hidden;
-            padding:10px;
-            margin-left: 20px;
-            margin-top: 20px;
-            border: 2px solid #cccccc;
-            border-radius: 5px;
-            background-color: #f5f5f5;
-            box-shadow: 1px 1px 5px #777;
-
-            &:nth-child(even){
-                background-color: #f5f5dc;
-            }
-            &:nth-child(odd){
-                background-color: white;
-            }
-
-            .cartList__gitarDescription{}
             .gitarDescription{
                 float: left;
                 width: 50%;
                 .gitarDescription__imageBlock{
                     float:left;
-                    width: 60%;
+                    width: 65%;
                     box-shadow: 1px 1px 5px #777;
                 }
                 .gitarDescription__image{
-                    width: 190px;
-                    height: 100px;
+                    width:100%
                 }
                 .gitarDescription__nameBlock{
                     float:right;
@@ -198,29 +111,6 @@
                     text-decoration: none;
                 }
 
-            }
-            .cartList__gitarChoose{}
-            .gitarChoose{
-                float: right;
-                width: 40%;
-                .gitarChoose__quantity{
-                    float:left;
-                    width:50%;
-                }
-                .gitarChoose__quantityForm{}
-                .gitarChoose__cartPrice{
-                    float:right;
-                    width:35%;
-                    text-align: center;
-                    margin-top: -16px;
-                }
-                .gitarChoose__header{
-                    color: #f26221;
-                }
-                .gitarChoose__delete{
-                    color: #f26221;
-                    text-decoration: none;
-                }
             }
 
         }
