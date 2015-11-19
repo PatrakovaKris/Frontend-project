@@ -1,16 +1,20 @@
 // main: ../style.less
-
+@import "../_mixins.less";
 .categories{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
     font-size: 10px;
-    padding: 10px 0px;
+    padding: 10px 0;
     background-color: #f5f5f5;
-    
+
     .categories__itemBlock{
-        display: inline-block;
+        flex: 0 0 40%;
         width: 200px;
         height: 200px;
+        align-items: center;
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -19,21 +23,59 @@
     }
     .categories__imageBlock{
         background-color: #fff;
-        border: 2px solid #cccccc;
-        border-radius: 5px;
-        box-shadow: 1px 1px 5px #777;
         transition: transform 1s;
+        .block();
     }
     .categories__imageBlock:hover{
-        
+
     }
     .categories__image{
         max-height: 180px;
     }
     .categories__titleBlock{
-  
+
     }
     .categories__title{
         text-decoration: none;
+    }
+}
+@media (min-width: 768px) {
+    .categories{
+        .categories__itemBlock{
+            flex: 0 0 30%;
+            width: 200px;
+            height: 200px;
+        }
+        .categories__imageBlock{
+        }
+        .categories__imageBlock:hover{
+
+        }
+        .categories__image{
+        }
+        .categories__titleBlock{
+
+        }
+        .categories__title{
+        }
+    }
+}
+@media (min-width: 992px) {
+    .categories{
+        .categories__itemBlock{
+            flex: 0 0 20%;
+        }
+        .categories__imageBlock{
+        }
+        .categories__imageBlock:hover{
+
+        }
+        .categories__image{
+        }
+        .categories__titleBlock{
+
+        }
+        .categories__title{
+        }
     }
 }
