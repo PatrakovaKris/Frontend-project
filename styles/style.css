@@ -462,6 +462,9 @@ body {
   border-radius: 5px;
   box-shadow: 0 3px 10px -5px black;
 }
+.categories .categories__imageBlock:hover {
+  transform: scale(1.2);
+}
 .categories .categories__image {
   max-height: 180px;
 }
@@ -471,8 +474,6 @@ body {
 @media (min-width: 768px) {
   .categories .categories__itemBlock {
     flex: 0 0 30%;
-    width: 200px;
-    height: 200px;
   }
 }
 @media (min-width: 992px) {
