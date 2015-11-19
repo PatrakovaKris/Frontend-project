@@ -543,66 +543,12 @@ body {
     padding: 10px;
     background-color: #f5f5f5;
   }
-  .productImages .productImages__bigImage {
-    text-align: center;
-  }
-  .productImages .productImages__bigimg {
-    position: relative;
-    box-shadow: 1px 1px 5px #777;
-    transition: transform 1s;
-  }
-  .productImages .productImages__smallImage {
-    display: flex;
-    width: 100%;
-    text-align: center;
-  }
-  .productImages .productImages__imageList {
-    padding: 0px;
-    width: 100%;
-  }
-  .productImages .productImages__imageItem {
-    display: inline;
-    margin-right: 10px;
-    border-right: 1px solid #e3e3e3;
-    list-style-type: none;
-  }
-  .productImages .productImages__image {
-    max-height: 150px;
-    list-style-type: none;
-  }
 }
 @media (min-width: 992px) {
   .productImages {
     flex: 0 0 45%;
     padding: 10px;
     background-color: #f5f5f5;
-  }
-  .productImages .productImages__bigImage {
-    text-align: center;
-  }
-  .productImages .productImages__bigimg {
-    position: relative;
-    box-shadow: 1px 1px 5px #777;
-    transition: transform 1s;
-  }
-  .productImages .productImages__smallImage {
-    display: flex;
-    width: 100%;
-    text-align: center;
-  }
-  .productImages .productImages__imageList {
-    padding: 0px;
-    width: 100%;
-  }
-  .productImages .productImages__imageItem {
-    display: inline;
-    margin-right: 10px;
-    border-right: 1px solid #e3e3e3;
-    list-style-type: none;
-  }
-  .productImages .productImages__image {
-    max-height: 150px;
-    list-style-type: none;
   }
 }
 .productDescription {
@@ -614,9 +560,10 @@ body {
   color: #616161;
   font-size: 15px;
   line-height: 18px;
+  text-align: justify;
 }
 .productDescription .descriptionBlock__infoPrice {
-  font-size: 40px;
+  font-size: 20px;
   color: #f26221;
   text-align: right;
 }
@@ -636,102 +583,37 @@ body {
 }
 .productDescription .quantity .quantity__incartButton {
   float: right;
+  background: linear-gradient(to top, #fefcea, #cccccc);
+  border: 1px solid #03052d;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
 }
 .productDescription .icons .icons__IconBlock {
   display: flex;
   width: 100%;
 }
 .productDescription .icons .icons__listIcon {
-  padding: 0px;
-  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 .productDescription .icons .icons__iconItem {
-  display: inline-block;
-  margin-right: 10px;
   list-style-type: none;
 }
 .productDescription .icons .icons__image {
-  width: 50%;
-  height: 50%;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
 }
 @media (min-width: 768px) {
   .productDescription {
     flex: 0 0 30%;
-    padding: 10px;
-  }
-  .productDescription .descriptionBlock__infoPrice {
-    text-align: center;
-  }
-  .productDescription .quantity .quantity_selection {
-    width: 80px;
-  }
-  .productDescription .icons .icons__IconBlock {
-    display: flex;
-    width: 100%;
-  }
-  .productDescription .icons .icons__listIcon {
-    padding: 0px;
-    list-style-type: none;
-  }
-  .productDescription .icons .icons__iconItem {
-    display: inline-block;
-    margin-right: 10px;
-    list-style-type: none;
-  }
-  .productDescription .icons .icons__image {
-    width: 50%;
-    height: 50%;
   }
 }
 @media (min-width: 992px) {
   .productDescription {
     flex: 0 0 45%;
-    padding: 10px;
-  }
-  .productDescription .descriptionBlock__text {
-    margin-bottom: 5px;
-    color: #616161;
-    font-size: 15px;
-    line-height: 18px;
-  }
-  .productDescription .descriptionBlock__infoPrice {
-    font-size: 40px;
-    color: #f26221;
-    text-align: right;
-  }
-  .productDescription .quantity {
-    margin: 10px;
-    padding: 10px;
-  }
-  .productDescription .quantity .quantity__header {
-    margin-bottom: 5px;
-    color: #616161;
-    font-size: 15px;
-    line-height: 18px;
-  }
-  .productDescription .quantity .quantity_selection {
-    float: left;
-    width: 80px;
-  }
-  .productDescription .quantity .quantity__incartButton {
-    float: right;
-  }
-  .productDescription .icons .icons__IconBlock {
-    display: flex;
-    width: 100%;
-  }
-  .productDescription .icons .icons__listIcon {
-    padding: 0px;
-    list-style-type: none;
-  }
-  .productDescription .icons .icons__iconItem {
-    display: inline-block;
-    margin-right: 10px;
-    list-style-type: none;
-  }
-  .productDescription .icons .icons__image {
-    width: 50%;
-    height: 50%;
   }
 }
 .cartSum {
