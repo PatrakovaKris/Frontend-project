@@ -6,8 +6,8 @@
     justify-content: center;
     
     .addressForm__section {
-        flex: 0 0 35%;
-        padding: 10px;
+        flex: 0 0 100%;
+        padding: 0 30px;
         
         &.addressForm__section--shipping {}
         &.addressForm__section--billing {}
@@ -38,4 +38,57 @@
     .addressForm__submit {
         width: 200px;
     }
+}
+
+@media (min-width: 768px) {
+.addressForm {
+    
+    .addressForm__section {
+        flex: 0 0 50%;
+        
+        &.addressForm__section--shipping {}
+        &.addressForm__section--billing {}
+        &.addressForm__section--submit {
+        }
+    }
+    .addressForm__subheader {}
+    .addressForm__label {
+        
+        &.addressForm__label--big {
+        
+        }
+    }
+    .addressForm__input {
+    }
+    .addressForm__checkbox {
+    }
+    .addressForm__submit {}
+}
+}
+
+@media (min-width: 992px) {
+.addressForm {
+    
+    .addressForm__section {
+        flex: 0 0 35%;
+        padding: 10px;
+        
+        &.addressForm__section--shipping {}
+        &.addressForm__section--billing {}
+        &.addressForm__section--submit {
+        }
+    }
+    .addressForm__subheader {}
+    .addressForm__label {
+        
+        &.addressForm__label--big {
+        
+        }
+    }
+    .addressForm__input {
+    }
+    .addressForm__checkbox {
+    }
+    .addressForm__submit {}
+}
 }

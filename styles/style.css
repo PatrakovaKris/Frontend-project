@@ -22,25 +22,43 @@ body {
 }
 .page {
   position: relative;
-  width: 1020px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   background: #f5f5f5;
-  box-shadow: 0 0 30px -10px black;
 }
 .page .page__main {
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
-  width: 1020px;
   height: 100%;
   padding-top: 68px;
+}
+.page .page__main.main--nowrap {
+  flex-wrap: nowrap;
+}
+@media (min-width: 768px) {
+  .page {
+    width: 700px;
+    box-shadow: 0 0 30px -10px black;
+  }
+  .page .page__main {
+    width: 700px;
+  }
+}
+@media (min-width: 992px) {
+  .page {
+    width: 1020px;
+  }
+  .page .page__main {
+    width: 1020px;
+  }
 }
 .header {
   position: fixed;
   z-index: 999;
-  width: 1020px;
+  width: 100%;
   height: 68px;
   padding: 10px;
   background: radial-gradient(ellipse closest-corner at 35px 30px, #f26221, #333333);
@@ -69,6 +87,16 @@ body {
   text-align: center;
   text-decoration: none;
 }
+@media (min-width: 768px) {
+  .header {
+    width: 700px;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    width: 1020px;
+  }
+}
 .footer {
   position: absolute;
   clear: both;
@@ -77,33 +105,54 @@ body {
   margin-top: 20px;
   bottom: 0;
   text-align: center;
-  width: 1020px;
+  width: 100%;
   left: 0;
   font-size: 14px;
 }
+@media (min-width: 768px) {
+  .footer {
+    width: 700px;
+  }
+}
+@media (min-width: 992px) {
+  .footer {
+    width: 1020px;
+  }
+}
 .searchForm {
-  position: relative;
-  width: 248px;
-  height: 48px;
-  margin-right: 10px;
-  line-height: 48px;
+  display: none;
 }
-.searchForm .searchForm__input {
-  width: 248px;
-  height: 28px;
-  padding-left: 10px;
-  border: none;
-  border-radius: 28px;
+@media (min-width: 768px) {
+  .searchForm {
+    display: block;
+    position: relative;
+    width: 248px;
+    height: 48px;
+    margin-right: 10px;
+    line-height: 48px;
+  }
+  .searchForm .searchForm__input {
+    width: 248px;
+    height: 28px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 28px;
+  }
+  .searchForm .searchForm__button {
+    position: absolute;
+    top: 11px;
+    right: 0;
+    height: 28px;
+    background: white;
+    border: none;
+    border-radius: 28px;
+    font-family: 'FA';
+  }
 }
-.searchForm .searchForm__button {
-  position: absolute;
-  top: 11px;
-  right: 0;
-  height: 28px;
-  background: white;
-  border: none;
-  border-radius: 28px;
-  font-family: 'FA';
+@media (min-width: 992px) {
+  .searchForm {
+    display: block;
+  }
 }
 .orderForm {
   position: relative;
@@ -148,12 +197,11 @@ body {
   left: 486px;
 }
 .orderForm .orderForm__submit {
-  background: #eceefe;
+  background: linear-gradient(to top, #fefcea, #f1da36);
   border: 1px solid #03052d;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
   position: absolute;
   width: 120px;
   height: 30px;
@@ -167,8 +215,8 @@ body {
   justify-content: center;
 }
 .addressForm .addressForm__section {
-  flex: 0 0 35%;
-  padding: 10px;
+  flex: 0 0 100%;
+  padding: 0 30px;
 }
 .addressForm .addressForm__section.addressForm__section--submit {
   flex-basis: 100%;
@@ -193,6 +241,17 @@ body {
 }
 .addressForm .addressForm__submit {
   width: 200px;
+}
+@media (min-width: 768px) {
+  .addressForm .addressForm__section {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 992px) {
+  .addressForm .addressForm__section {
+    flex: 0 0 35%;
+    padding: 10px;
+  }
 }
 .message {
   width: 30%;
@@ -219,6 +278,7 @@ body {
 }
 .products {
   flex: 0 1 100%;
+  padding: 10px;
 }
 .products .products__changeView {
   text-align: right;
@@ -229,24 +289,43 @@ body {
 }
 .products .products__list {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin: 0;
-  padding: 14px;
+  padding: 14px 10px;
   list-style: none;
+}
+.products .products__list.products__list--grid .products__item {
+  flex: 0 1 18.6%;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 .products .products__list.products__list--grid .products__description,
 .products .products__list.products__list--grid .products__addtoCart {
   display: none;
 }
+.products .products__list.products__list--list .products__item {
+  flex: 0 1 70%;
+  margin: 0 auto 10px auto;
+}
+.products .products__list.products__list--list .products__figure {
+  float: left;
+  width: 30%;
+}
+.products .products__list.products__list--list .products__description {
+  width: 70%;
+  float: left;
+}
+.products .products__list.products__list--list .products__addtoCart {
+  display: block;
+  float: left;
+  margin-left: 30%;
+  padding: 10px;
+  background: #c8c8c8;
+}
 .products .products__item {
-  flex: 0 1 24%;
-  margin-bottom: 10px;
+  box-shadow: 0 3px 10px -5px black;
   padding: 10px;
   background: white;
-}
-.products .products__item:last-of-type {
-  margin-right: auto;
 }
 .products .products__figure {
   display: block;
@@ -291,12 +370,11 @@ body {
   text-align: left;
 }
 .loginForm .loginForm__submit {
-  background: #eceefe;
+  background: linear-gradient(to top, #fefcea, #f1da36);
   border: 1px solid #03052d;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
 }
 .loginForm .loginForm__register {
   text-align: right;
@@ -450,12 +528,11 @@ body {
   color: #f26221;
 }
 .cartSum .cartSum__cartButton {
-  background: #eceefe;
+  background: linear-gradient(to top, #fefcea, #f1da36);
   border: 1px solid #03052d;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
 }
 .cart {
   padding: 10px;
@@ -474,10 +551,10 @@ body {
   background-color: #f5f5f5;
   box-shadow: 1px 1px 5px #777;
 }
-.cart .cartList .Cart__List:nth-child(even) {
+.cart .cartList:nth-child(even) {
   background-color: #f5f5dc;
 }
-.cart .cartList .Cart__List:nth-child(odd) {
+.cart .cartList:nth-child(odd) {
   background-color: white;
 }
 .cart .cartList .gitarDescription {
@@ -538,21 +615,19 @@ body {
   float: left;
 }
 .total .total__checkoutBtn {
-  background: #eceefe;
+  background: linear-gradient(to top, #fefcea, #f1da36);
   border: 1px solid #03052d;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
 }
 .total .total__continue {
   float: right;
 }
 .total .total__continueBtn {
-  background: #eceefe;
+  background: linear-gradient(to top, #fefcea, #f1da36);
   border: 1px solid #03052d;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
 }

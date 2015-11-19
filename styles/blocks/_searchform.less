@@ -1,13 +1,21 @@
 // main: ../style.less
 
 .searchForm {
+    display: none;
+    
+    .searchForm__form {}
+    .searchForm__input {}
+    .searchForm__button {}
+}
+@media (min-width: 768px) {
+.searchForm {
+    display: block;
     position: relative;
     width: 248px;
     height: 48px;
     margin-right: 10px;
     line-height: 48px;
     
-    .searchForm__form {}
     .searchForm__input {
         width: 248px;
         height: 28px;
@@ -25,4 +33,10 @@
         border-radius: 28px;
         font-family: 'FA';
     }
+}
+}
+@media (min-width: 992px) {
+.searchForm {
+    display: block;
+}
 }
