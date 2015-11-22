@@ -1,31 +1,35 @@
 // main: ../style.less
 
 @import "../_mixins.less";
-.cartSum{
-    display: none;
-}
+    .cartSum {
+        display: block;
+        flex: 0 0 100%;
+        order: 1;
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        justify-content:center;
+
+        .cartSum__summary {
+            color: #f26221;
+        }
+        .cartSum__cartButton {
+            .button();
+
+        }
+    }
 @media (min-width: 768px) {
-    .cartSum{
-        display: none;
+    .cartSum {
+        display: block;
+        flex: 0 0 30%;
+        order: 2;
+        padding: 20px;
+        margin-top: 20px;
+        font-size: 15px;
+        text-align: center;
     }
 }
 @media (min-width: 992px) {
     .cartSum{
-        display: block;
-        flex: 0 0 30%;
-        padding:20px;
-        margin-top: 20px;
-        font-size: 15px;
-        text-align: center;
-
-        .cartSum__header{}
-
-        .cartSum__summary{
-            color:#f26221;
-        }
-        .cartSum__cartButton{
-            .button();
-        }
-
     }
 }

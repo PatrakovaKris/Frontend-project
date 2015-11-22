@@ -1,9 +1,10 @@
 // main: ../style.less
 @import "../_mixins.less";
 .cart{
-    padding:10px;
+    display:block;
     flex: 0 0 100%;
-    margin-top: 20px;
+    order: 2;
+    padding:10px;
     font-size: 15px;
 
     .cartList{
@@ -73,6 +74,12 @@
 }
 @media (min-width: 768px) {
     .cart {
+        display: block;
+        padding:10px;
+        flex: 0 0 65%;
+        margin-top: 20px;
+        font-size: 15px;
+
         .gitarDescription__imageBlock {
             float: left;
             width: 65%;
@@ -85,6 +92,7 @@
 }
 @media (min-width: 992px) {
     .cart{
+        display: block;
         padding:10px;
         flex: 0 0 70%;
         margin-top: 20px;
