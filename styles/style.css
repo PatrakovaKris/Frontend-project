@@ -387,6 +387,9 @@ body {
     flex: 0 1 70%;
   }
 }
+.header__link--logo {
+  display: none;
+}
 .loginForm {
   background-color: #f5f5f5;
   margin: 0 auto;
@@ -423,6 +426,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   text-align: center;
+  width: 60%;
 }
 .loginForm .loginForm__register {
   text-align: right;
