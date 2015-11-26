@@ -6,14 +6,15 @@ function Category(name, imgSrc, url){
     this.url = url;
 }
 function getCategories(){
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
-    Categories.push(new Category('Классические гитары','gklass.jpg','Itemsgrid.html'));
+
+    Categories.push(new Category('Класc. гитары','gklass.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Акк. гитары','gakust3.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Электро-акк. гитары','gelecakust.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Электрогитары','gelectro.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Басс. гитары','gbass.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Укулеле','gukulele.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Банджо','gbanjo.jpg','Itemsgrid.html'));
+    Categories.push(new Category('Балалайки','gbalalaika.png','Itemsgrid.html'));
 }
 function createCategoryHTML(category){
     var itemBlock = document.createElement('figure');
