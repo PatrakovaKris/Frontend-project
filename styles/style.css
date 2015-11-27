@@ -263,6 +263,11 @@ body {
   margin-right: 10px;
 }
 .addressForm .addressForm__submit {
+  background: linear-gradient(to top, #fefcea, #cccccc);
+  border: 1px solid #03052d;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
   width: 200px;
 }
 @media (min-width: 768px) {

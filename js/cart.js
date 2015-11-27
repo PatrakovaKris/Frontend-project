@@ -44,10 +44,12 @@ function createCartHTML(cart){
     gitarChoose.className = "cartList__gitarChoose gitarChoose";
     quantity.className = "gitarChoose__quantity";
     quantityForm.className = "gitarChoose__quantityForm";
+    quantityForm.innerHTML= ("Количество " );
     cartPrice.className =  'gitarChoose__cartPrice';
     h.className = 'gitarChoose__header';
     h.innerText = cart.price;
     del.className = 'gitarChoose__delete';
+    del.innerHTML = 'Удалить';
 
     for(var i=1; i<=4; i++){
         var index = i;
