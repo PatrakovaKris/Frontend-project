@@ -2,28 +2,57 @@
  * Created by Кристина on 30.11.2015.
  */
 var Page = React.createClass({
-    getDefaultProps:function() {
+    getInitialState: function(){
+        return {
+            currentPage: Helpers.getPageName()
+        }
+    },
+    getDefaultProps: function() {
         return {
             categories: [
-                {description:'Класc. гитары',img:'gklass.jpg',href:'Itemsgrid.html'},
-                {description:'Акк. гитары',img:'gakust3.jpg',href:'Itemsgrid.html'},
-                {description:'Электро-акк. гитары',img:'gelecakust.jpg',href:'Itemsgrid.html'},
-                {description:'Электрогитары',img:'gelectro.jpg',href:'Itemsgrid.html'},
-                {description:'Басс. гитары',img:'gbass.jpg',href:'Itemsgrid.html'},
-                {description:'Укулеле',img:'gukulele.jpg',href:'Itemsgrid.html'},
-                {description:'Банджо',img:'gbanjo.jpg',href:'Itemsgrid.html'},
-                {description:'Балалайки',img:'gbalalaika.png',href:'Itemsgrid.html'}
+                {description:'Класc. гитары',img:'gklass.jpg',href:'#itemslist'},
+                {description:'Акк. гитары',img:'gakust3.jpg',href:'#itemslist'},
+                {description:'Электро-акк. гитары',img:'gelecakust.jpg',href:''},
+                {description:'Электрогитары',img:'gelectro.jpg',href:''},
+                {description:'Басс. гитары',img:'gbass.jpg',href:''},
+                {description:'Укулеле',img:'gukulele.jpg',href:''},
+                {description:'Банджо',img:'gbanjo.jpg',href:''},
+                {description:'Балалайки',img:'gbalalaika.png',href:''}
+            ],
+            products: [
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+                {href:'Itemcard.html', src:'1.jpg', name:'Fender AC-560', price:' 600',
+                    description:'Lorem ipsum dolor sit amet, consectetur adipisicing elitisi ut aliquip ex ea commodo consequat.', cart:'Добавить в корзину'},
+            ],
+            navigation: [
+                {href:'',name:'Класcические гитары'},
+                {href:'',name:'Класcические гитары'},
+                {href:'',name:'Класcические гитары'},
+                {href:'',name:'Класcические гитары'},
+                {href:'',name:'Класcические гитары'},
+                {href:'',name:'Класcические гитары'}
             ]
         }
     },
-
-        render: function(){
+    render: function(){
         return (
             <div className='page'>
                 <Header />
                 <main className="page__main main">
-                    <Categories categories={this.props.categories}/>
-                    {Helpers.getFullPath()}
+                    {this.state.currentPage == '' ? <Categories categories={this.props.categories} /> : null }
+                    {this.state.currentPage == '#itemslist' ? <Navigation navigation={this.props.navigation} /> : null }
+                    {this.state.currentPage == '#itemslist' ? <Products products={this.props.products} /> : null }
                 </main>
                 <Footer />
             </div>

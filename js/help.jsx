@@ -3,5 +3,10 @@
  */
 var Helpers = {
     getFullPath: function(imgName){
+        return 'images/' + imgName;
+    },
+    getPageName() {
+        var path = window.location.hash;
+        return path.replace(/\?.*/,'');
     }
 };

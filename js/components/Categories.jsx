@@ -4,7 +4,7 @@ var Categories = React.createClass({
             return (
                 <figure className="categories__itemBlock" key={key}>
                     <div className="categories__imageBlock">
-                        <img  src={category.img} alt="klass" className="categories__image"/>
+                        <img src={Helpers.getFullPath(category.img)} alt="klass" className="categories__image"/>
                     </div>
                     <figcaption className="categories__titleBlock">
                         <a className="categories__title" href={category.href}>{category.description}</a>
