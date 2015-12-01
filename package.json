@@ -1,0 +1,35 @@
+{
+  "name": "react-basics",
+  "version": "0.1.0",
+  "description": "tutorial",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-react": "^6.1.18",
+    "babelify": "^7.2.0",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrakovaKris/Frontend-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PatrakovaKris/Frontend-project/issues"
+  },
+  "homepage": "https://github.com/PatrakovaKris/Frontend-project#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-webserver": "^0.9.1",
+    "yargs": "^3.30.0"
+  }
+}
