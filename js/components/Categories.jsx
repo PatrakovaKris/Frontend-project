@@ -1,5 +1,6 @@
 var Categories = React.createClass({
     render: function () {
+        var that = this;
         var categories = this.props.categories.map(function(category, key) {
             return (
                 <figure className="categories__itemBlock" key={key}>
@@ -7,7 +8,7 @@ var Categories = React.createClass({
                         <img src={Helpers.getFullPath(category.img)} alt="klass" className="categories__image"/>
                     </div>
                     <figcaption className="categories__titleBlock">
-                        <a className="categories__title" href={category.href}>{category.description}</a>
+                        <a className="categories__title" href={category.href} onClick={that.props.categoryLinkClickHandler}>{category.description}</a>
                     </figcaption>
                 </figure>
             );

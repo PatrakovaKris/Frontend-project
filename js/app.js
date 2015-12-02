@@ -17,6 +17,7 @@ var Categories = React.createClass({
     displayName: "Categories",
 
     render: function () {
+        var that = this;
         var categories = this.props.categories.map(function (category, key) {
             return React.createElement(
                 "figure",
@@ -31,7 +32,7 @@ var Categories = React.createClass({
                     { className: "categories__titleBlock" },
                     React.createElement(
                         "a",
-                        { className: "categories__title", href: category.href },
+                        { className: "categories__title", href: category.href, onClick: that.props.onClickImage },
                         category.description
                     )
                 )
@@ -163,6 +164,12 @@ var Page = React.createClass({
             navigation: [{ href: '', name: 'Класcические гитары' }, { href: '', name: 'Класcические гитары' }, { href: '', name: 'Класcические гитары' }, { href: '', name: 'Класcические гитары' }, { href: '', name: 'Класcические гитары' }, { href: '', name: 'Класcические гитары' }]
         };
     },
+    updatePage: function (e) {
+        window.location.assign(e.target.getAttribute('href'));
+        this.setState({
+            currentPage: Helpers.getPageName()
+        });
+    },
     render: function () {
         return React.createElement(
             'div',
@@ -171,17 +178,18 @@ var Page = React.createClass({
             React.createElement(
                 'main',
                 { className: 'page__main main' },
-                this.state.currentPage == '' ? React.createElement(Categories, { categories: this.props.categories }) : null,
+                this.state.currentPage == '' ? React.createElement(Categories, { categories: this.props.categories, onClickImage: this.updatePage }) : null,
                 this.state.currentPage == '#itemslist' ? React.createElement(Navigation, { navigation: this.props.navigation }) : null,
-                this.state.currentPage == '#itemslist' ? React.createElement(Products, { products: this.props.products }) : null
+                this.state.currentPage == '#itemslist' ? React.createElement(ProductsList, { products: this.props.products }) : null
             ),
             React.createElement(Footer, null)
         );
     }
 });
-var Products = React.createClass({
-    displayName: "Products",
+var ProductsList = React.createClass({
+    displayName: "ProductsList",
 
+    changeView: function () {},
     render: function () {
         var products = this.props.products.map(function (product, key) {
             return React.createElement(

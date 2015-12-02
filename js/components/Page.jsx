@@ -45,14 +45,21 @@ var Page = React.createClass({
             ]
         }
     },
+    updatePage: function(e){
+        window.location.assign(e.target.getAttribute('href'));
+        this.setState({
+            currentPage: Helpers.getPageName()
+        });
+    },
     render: function(){
         return (
             <div className='page'>
-                <Header />
-                <main className="page__main main">
-                    {this.state.currentPage == '' ? <Categories categories={this.props.categories} /> : null }
+                <Header headerButtonClickHandler={this.updatePage} />
+                <main className="page__main main" >
+                    {this.state.currentPage == '' ? <Categories categories={this.props.categories} categoryLinkClickHandler={this.updatePage} /> : null }
                     {this.state.currentPage == '#itemslist' ? <Navigation navigation={this.props.navigation} /> : null }
-                    {this.state.currentPage == '#itemslist' ? <Products products={this.props.products} /> : null }
+                    {this.state.currentPage == '#itemslist' ? <ProductsList products={this.props.products} /> : null }
+                    {this.state.currentPage == '#cart' ? <Cart products={this.props.products} /> : null }
                 </main>
                 <Footer />
             </div>
