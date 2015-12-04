@@ -185,6 +185,9 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
   }
+  .orderForm .orderForm__label {
+    display: none;
+  }
   .orderForm .orderForm__input {
     position: absolute;
     height: 28px;
@@ -246,8 +249,7 @@ body {
   text-align: center;
 }
 .addressForm .addressForm__label {
-  display: inline-block;
-  width: 40%;
+  display: block;
   margin-right: -3px;
   margin-bottom: 5px;
 }
@@ -255,7 +257,7 @@ body {
   width: 60%;
 }
 .addressForm .addressForm__input {
-  width: 60%;
+  width: 100%;
   margin-right: -3px;
 }
 .addressForm .addressForm__checkbox {
@@ -274,6 +276,13 @@ body {
   .addressForm .addressForm__section {
     flex: 0 0 50%;
   }
+  .addressForm .addressForm__label {
+    display: inline-block;
+    width: 40%;
+  }
+  .addressForm .addressForm__input {
+    width: 60%;
+  }
 }
 @media (min-width: 992px) {
   .addressForm .addressForm__section {
@@ -286,7 +295,17 @@ body {
   margin: 0 auto;
 }
 .navigation {
-  display: none;
+  display: block;
+  flex: 0 0 100%;
+}
+.navigation .navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.navigation .navigation__link {
+  display: block;
+  padding: 10px;
 }
 @media (min-width: 768px) {
   .navigation {
@@ -294,11 +313,6 @@ body {
     flex: 0 0 150px;
     align-self: stretch;
     border-right: 1px solid black;
-  }
-  .navigation .navigation__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
   }
   .navigation .navigation__link {
     display: block;
@@ -320,7 +334,10 @@ body {
   padding: 10px;
 }
 .products .products__changeView {
-  text-align: right;
+  display: none;
+}
+.products .products__viewOption {
+  text-decoration: underline;
 }
 .products .products__viewOption.products__viewOption--current {
   text-decoration: none;
@@ -380,6 +397,13 @@ body {
   display: block;
 }
 @media (min-width: 768px) {
+  .products .products__changeView {
+    display: block;
+    text-align: right;
+  }
+  .products .products__list .products__figure {
+    height: 160px;
+  }
   .products .products__list.products__list--grid .products__item {
     flex: 0 1 31%;
   }

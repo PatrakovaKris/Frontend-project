@@ -3,13 +3,13 @@ var Header = React.createClass({
         return(
             <header className="page__header header">
                 <div className="header__logo">
-                    <a className="header__logoLink" href="Categories.html">
+                    <a className="header__logoLink" href="">
                         <img className="header__logoImage" src="images/flogo.png" alt="logo" title="" />
                     </a>
                 </div>
                 <div className="header__links">
-                    <a href="Cart.html" className="header__link">&#xf07a;</a>
-                    <a href="Login.html" className="header__link">&#xf007;</a>
+                    <a href="#cart" className="header__link" onClick={this.props.headerButtonClickHandler}>&#xf07a;</a>
+                    <a href="#login" className="header__link" onClick={this.props.headerButtonClickHandler}>&#xf007;</a>
                 </div>
                 <div className="header__searchForm searchForm">
                     <form className="searchForm__form">

@@ -1,7 +1,18 @@
 // main: ../style.less
 
 .navigation {
-    display: none;
+    display: block;
+    flex: 0 0 100%;
+    
+    .navigation__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .navigation__link {
+        display: block;
+        padding: 10px;
+    }
 }
 @media (min-width: 768px) {
 .navigation {
@@ -10,11 +21,7 @@
     align-self: stretch;
     border-right: 1px solid black;
     
-    .navigation__list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+    .navigation__list {}
     .navigation__item {}
     .navigation__link {
         display: block;
