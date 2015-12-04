@@ -28,7 +28,7 @@ var Cart = React.createClass({
                             </div>
                             <div className="gitarChoose__cartPrice">
                                 <h3 className="gitarChoose__header">{cart.price}</h3>
-                                <a className="gitarChoose__delete" href='#' onClick={that.props.cartButtonDeleteBLock}>Удалить</a>
+                                <a className="gitarChoose__delete" href='#'>Удалить</a>
                             </div>
                         </div>
                     </section>

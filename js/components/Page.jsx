@@ -124,11 +124,11 @@ var Page = React.createClass({
             }
         }
     },
-    deleteCartBlock: function(){
-        $('.gitarChoose__delete').on('click', function () {
-                $('#outer').remove();
-            });
-    },
+    //deleteCartBlock: function(){
+    //    $('.gitarChoose__delete').on('click', function () {
+    //            $('#outer').remove();
+    //        });
+    //},
     addToCart: function(e){
         var id = e.target.getAttribute('data-prodid');
         var selectValue = (e.target.form) ? e.target.form.getElementsByClassName('quantity_selection')[0].value : null;
@@ -177,7 +177,7 @@ var Page = React.createClass({
                     {this.state.currentPage == '#itemscard' ? <BreadCrumbs product={this.getProductById(this.state.params.id)} crumbsLinkClickHandler={this.updatePage}/> : null }
                     {this.state.currentPage == '#itemscard' ? <CardImages cardImages={this.getImagesById(this.state.params.id)} /> : null }
                     {this.state.currentPage == '#itemscard' ? <CardDescription product={this.getProductById(this.state.params.id)} addToCartHandler={this.addToCart} itemcardLinkClickHandler={this.updatePage}/> : null }
-                    {this.state.currentPage == '#cart' ? <Cart cart={this.state.cart} cartLinkClickHandler={this.updatePage} cartButtonDeleteBLock={this.deleteCartBlock} /> : null }
+                    {this.state.currentPage == '#cart' ? <Cart cart={this.state.cart} cartLinkClickHandler={this.updatePage}  /> : null }
                     {this.state.currentPage == '#cart' ? <CartTotal cart={this.props.cart} cartLinkClickHandler={this.updatePage} /> : null }
                     {this.state.currentPage == '#addressform' ? <Addressform addresLinkClickHandler={this.updatePage} /> : null }
                     {this.state.currentPage == '#orderform' ? <Orderform orderLinkClickHandler={this.updatePage} /> : null }

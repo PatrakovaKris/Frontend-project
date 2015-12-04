@@ -303,40 +303,61 @@ var CardImages = React.createClass({
             { className: "main__itemcard productImages" },
             React.createElement(
                 "div",
-                { className: "productImages__bigImage" },
-                React.createElement("img", { className: "productImages__bigImg", src: Helpers.getFullPath(this.props.cardImages.bigimage), width: "80%", height: "75%", alt: "gitar" })
+                { id: "big", className: "productImages__bigImage" },
+                React.createElement("img", { className: "productImages__bigImg", src: Helpers.getFullPath(this.props.cardImages.smallimg1), width: "80%", height: "75%", alt: "gitar" })
             ),
             React.createElement(
                 "div",
-                { className: "productImages__smallImage" },
+                { id: "small", className: "productImages__smallImage" },
                 React.createElement(
                     "ul",
                     { className: "productImages__imageList" },
                     React.createElement(
                         "li",
-                        { className: "productImages__imageItem" },
-                        React.createElement("img", { className: "productImages__image", src: Helpers.getFullPath(this.props.cardImages.arrowLeft), alt: "cart" })
+                        null,
+                        " className=\"productImages__imageItem\">",
+                        React.createElement(
+                            "a",
+                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.arrowLeft), alt: "cart" },
+                            "1"
+                        )
                     ),
                     React.createElement(
                         "li",
                         { className: "productImages__imageItem" },
-                        React.createElement("img", { className: "productImages__image", src: Helpers.getFullPath(this.props.cardImages.smallimg1), alt: "cart" })
+                        React.createElement(
+                            "a",
+                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg1), alt: "cart" },
+                            "2"
+                        )
                     ),
                     React.createElement(
                         "li",
                         { className: "productImages__imageItem" },
-                        React.createElement("img", { className: "productImages__image", src: Helpers.getFullPath(this.props.cardImages.smallimg2), alt: "cart" })
+                        React.createElement(
+                            "a",
+                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg2), alt: "cart" },
+                            "3"
+                        )
                     ),
                     React.createElement(
                         "li",
                         { className: "productImages__imageItem" },
-                        React.createElement("img", { className: "productImages__image", src: Helpers.getFullPath(this.props.cardImages.smallimg3), alt: "cart" }),
+                        React.createElement(
+                            "a",
+                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg3), alt: "cart" },
+                            "4"
+                        ),
                         " "
                     ),
                     React.createElement(
                         "li",
                         { className: "productImages__imageItem" },
-                        React.createElement("img", { className: "productImages__image", src: Helpers.getFullPath(this.props.cardImages.arrowRigth), alt: "cart" }),
+                        React.createElement(
+                            "a",
+                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.arrowRigth), alt: "cart" },
+                            "5"
+                        ),
                         " "
                     )
                 )
@@ -407,7 +428,7 @@ var Cart = React.createClass({
                         ),
                         React.createElement(
                             "a",
-                            { className: "gitarChoose__delete", href: "#", onClick: that.props.cartButtonDeleteBLock },
+                            { className: "gitarChoose__delete", href: "#" },
                             "Удалить"
                         )
                     )
@@ -759,11 +780,11 @@ var Page = React.createClass({
             }
         }
     },
-    deleteCartBlock: function () {
-        $('.gitarChoose__delete').on('click', function () {
-            $('#outer').remove();
-        });
-    },
+    //deleteCartBlock: function(){
+    //    $('.gitarChoose__delete').on('click', function () {
+    //            $('#outer').remove();
+    //        });
+    //},
     addToCart: function (e) {
         var id = e.target.getAttribute('data-prodid');
         var selectValue = e.target.form ? e.target.form.getElementsByClassName('quantity_selection')[0].value : null;
@@ -815,7 +836,7 @@ var Page = React.createClass({
                 this.state.currentPage == '#itemscard' ? React.createElement(BreadCrumbs, { product: this.getProductById(this.state.params.id), crumbsLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#itemscard' ? React.createElement(CardImages, { cardImages: this.getImagesById(this.state.params.id) }) : null,
                 this.state.currentPage == '#itemscard' ? React.createElement(CardDescription, { product: this.getProductById(this.state.params.id), addToCartHandler: this.addToCart, itemcardLinkClickHandler: this.updatePage }) : null,
-                this.state.currentPage == '#cart' ? React.createElement(Cart, { cart: this.state.cart, cartLinkClickHandler: this.updatePage, cartButtonDeleteBLock: this.deleteCartBlock }) : null,
+                this.state.currentPage == '#cart' ? React.createElement(Cart, { cart: this.state.cart, cartLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#cart' ? React.createElement(CartTotal, { cart: this.props.cart, cartLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#addressform' ? React.createElement(Addressform, { addresLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#orderform' ? React.createElement(Orderform, { orderLinkClickHandler: this.updatePage }) : null,

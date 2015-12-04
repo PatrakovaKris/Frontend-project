@@ -9,5 +9,6 @@
     <orderEntry type="library" name="Frontend-project1 node_modules" level="project" />
     <orderEntry type="library" name="react-dom" level="application" />
     <orderEntry type="library" name="react" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>
