@@ -295,70 +295,49 @@ var CardDescription = React.createClass({
     }
 });
 var CardImages = React.createClass({
-    displayName: "CardImages",
+    displayName: 'CardImages',
 
     render: function () {
         return React.createElement(
-            "section",
-            { className: "main__itemcard productImages" },
+            'section',
+            { id: 'productImages', className: 'main__itemcard productImages' },
             React.createElement(
-                "div",
-                { id: "big", className: "productImages__bigImage" },
-                React.createElement("img", { className: "productImages__bigImg", src: Helpers.getFullPath(this.props.cardImages.smallimg1), width: "80%", height: "75%", alt: "gitar" })
+                'div',
+                { id: 'bigImage', className: 'productImages__bigImage' },
+                React.createElement('img', { className: 'productImages__bigImg', src: Helpers.getFullPath(this.props.cardImages.bigimage), width: '80%', height: '75%', alt: 'gitar' })
             ),
             React.createElement(
-                "div",
-                { id: "small", className: "productImages__smallImage" },
+                'div',
+                { id: 'smallImage', className: 'productImages__smallImage' },
                 React.createElement(
-                    "ul",
-                    { className: "productImages__imageList" },
+                    'ul',
+                    { className: 'productImages__imageList' },
                     React.createElement(
-                        "li",
-                        null,
-                        " className=\"productImages__imageItem\">",
-                        React.createElement(
-                            "a",
-                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.arrowLeft), alt: "cart" },
-                            "1"
-                        )
+                        'li',
+                        { className: 'productImages__imageItem' },
+                        React.createElement('img', { className: 'productImages__image', src: Helpers.getFullPath(this.props.cardImages.arrowLeft), alt: 'cart' })
                     ),
                     React.createElement(
-                        "li",
-                        { className: "productImages__imageItem" },
-                        React.createElement(
-                            "a",
-                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg1), alt: "cart" },
-                            "2"
-                        )
+                        'li',
+                        { className: 'productImages__imageItem' },
+                        React.createElement('img', { className: 'productImages__image', src: Helpers.getFullPath(this.props.cardImages.smallimg1), alt: 'cart' })
                     ),
                     React.createElement(
-                        "li",
-                        { className: "productImages__imageItem" },
-                        React.createElement(
-                            "a",
-                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg2), alt: "cart" },
-                            "3"
-                        )
+                        'li',
+                        { className: 'productImages__imageItem' },
+                        React.createElement('img', { className: 'productImages__image', src: Helpers.getFullPath(this.props.cardImages.smallimg2), alt: 'cart' })
                     ),
                     React.createElement(
-                        "li",
-                        { className: "productImages__imageItem" },
-                        React.createElement(
-                            "a",
-                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.smallimg3), alt: "cart" },
-                            "4"
-                        ),
-                        " "
+                        'li',
+                        { className: 'productImages__imageItem' },
+                        React.createElement('img', { className: 'productImages__image', src: Helpers.getFullPath(this.props.cardImages.smallimg3), alt: 'cart' }),
+                        ' '
                     ),
                     React.createElement(
-                        "li",
-                        { className: "productImages__imageItem" },
-                        React.createElement(
-                            "a",
-                            { className: "productImages__image", href: Helpers.getFullPath(this.props.cardImages.arrowRigth), alt: "cart" },
-                            "5"
-                        ),
-                        " "
+                        'li',
+                        { className: 'productImages__imageItem' },
+                        React.createElement('img', { className: 'productImages__image', src: Helpers.getFullPath(this.props.cardImages.arrowRigth), alt: 'cart' }),
+                        ' '
                     )
                 )
             )
