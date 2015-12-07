@@ -25,7 +25,7 @@ var Helpers = {
     getCategoryName(cat) {
         switch(cat){
             case "classic":
-                return "Классические";
+                return "Клаcсические";
             case "acoustic":
                 return "Аккустические";
             case "elacc":

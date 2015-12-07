@@ -20,7 +20,7 @@ var Cart = React.createClass({
 
                         <div className="cartList__gitarChoose gitarChoose">
                             <div className="gitarChoose__quantity">
-                                <form className="gitarChoose__quantityForm">Количество
+                                <form className="gitarChoose__quantityForm">Колличество
                                     <select  name="menu" size="1">
                                         {options}
                                     </select>

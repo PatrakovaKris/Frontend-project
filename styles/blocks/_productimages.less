@@ -4,15 +4,20 @@
     flex: 0 0 100%;
     padding: 10px;
     background-color: #f5f5f5;
+    margin-left: auto;
 
     .productImages__bigImage{
+        width: 350px;
+        height: auto;
         text-align: center;
+        background-color: white;
+        .block();
     }
 
     .productImages__bigImg{
         position: relative;
         transition: transform 1s;
-        .block();
+        //.block();
     }
     .productImages__bigImg:hover{
         transform:scale(1.2);
@@ -40,7 +45,7 @@
             text-align: center;
         }
         .productImages__imageList{
-            padding: 0px;
+            padding: 0;
             width: 100%;
         }
         .productImages__imageItem{

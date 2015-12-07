@@ -4,7 +4,7 @@ var CardImages = React.createClass({
         return (
             <section id='productImages' className="main__itemcard productImages">
                 <div id='bigImage' className="productImages__bigImage">
-                    <img className="productImages__bigImg" src={Helpers.getFullPath(this.props.cardImages.bigimage)} width="80%" height="75%" alt="gitar"/>
+                    <img className="productImages__bigImg" src={Helpers.getFullPath(this.props.cardImages.smallimg1)}  alt="gitar"/>
                 </div>
                 <div id='smallImage' className="productImages__smallImage">
                     <ul className="productImages__imageList">
