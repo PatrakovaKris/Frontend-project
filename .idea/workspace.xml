@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f26fd4ad-7782-4092-ab3f-1572a086db35" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MusicStore.html" afterPath="$PROJECT_DIR$/MusicStore.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Slider.js" afterPath="$PROJECT_DIR$/js/Slider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js.map" afterPath="$PROJECT_DIR$/js/app.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/components/CardImages.jsx" afterPath="$PROJECT_DIR$/js/components/CardImages.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-    </list>
+    <list default="true" id="f26fd4ad-7782-4092-ab3f-1572a086db35" name="Default" comment="" />
     <ignored path="Frontend-project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
