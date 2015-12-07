@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-//var less = require('gulp-less');
+var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
@@ -7,11 +7,11 @@ var webserver = require('gulp-webserver');
 var autoprefixer = require('gulp-autoprefixer');
 var yargs = require('yargs');
 
-//gulp.task('compile-less', function(){
-//    return gulp.src('styles/style.less')
-//    .pipe(less())
-//    .pipe(gulp.dest('stylesss'));
-//});
+gulp.task('compile-less', function(){
+    return gulp.src('styles/style.less')
+    .pipe(less())
+    .pipe(gulp.dest('styles/'));
+});
 
 gulp.task('js', function() {
     return gulp.src('js/**/*.jsx')
@@ -24,4 +24,4 @@ gulp.task('js', function() {
         .pipe(gulp.dest('js/'));
 });
 
-gulp.task('default', ['js']);
+gulp.task('default', ['js', 'compile-less']);
