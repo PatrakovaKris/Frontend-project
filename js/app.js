@@ -316,6 +316,7 @@ var CardImages = React.createClass({
                         'li',
                         { className: 'productImages__imageItem' },
                         React.createElement('img', { className: 'productImages__image--arrow', src: Helpers.getFullPath(this.props.cardImages.arrowLeft), alt: 'cart' })
+
                     ),
                     React.createElement(
                         'li',
@@ -337,6 +338,7 @@ var CardImages = React.createClass({
                         'li',
                         { className: 'productImages__imageItem' },
                         React.createElement('img', { className: 'productImages__image--arrow', src: Helpers.getFullPath(this.props.cardImages.arrowRigth), alt: 'cart' }),
+
                         ' '
                     )
                 )
