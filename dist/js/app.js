@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-    ReactDOM.render(React.createElement(Page), document.body);
+    ReactDOM.render(React.createElement(Page), $('.page')[0]);
 });
 /**
  * Created by Kristina_Patrakova on 12/1/2015.
@@ -238,7 +238,7 @@ var CardDescription = React.createClass({
                         { className: "quantity_selection", name: "menu", size: "1" },
                         React.createElement(
                             "option",
-                            { selected: "selected", value: "1" },
+                            { value: "1" },
                             "1"
                         ),
                         React.createElement(
@@ -355,7 +355,7 @@ var Cart = React.createClass({
                 var n = +i;
                 options.push(React.createElement(
                     "option",
-                    { value: i, selected: i == cart.quantity ? true : false },
+                    { value: i, key: i },
                     i
                 ));
             }
@@ -392,7 +392,7 @@ var Cart = React.createClass({
                             "Количество",
                             React.createElement(
                                 "select",
-                                { name: "menu", size: "1" },
+                                { defaultValue: cart.quantity, className: "menu", size: "1" },
                                 options
                             )
                         )
@@ -424,8 +424,8 @@ var Cart = React.createClass({
                 { className: "main__total total" },
                 React.createElement(
                     "h3",
-                    { className: "total__header" },
-                    "Итого: 1800$"
+                    { className: "total__header", href: "#" },
+                    "ИТОГО:  "
                 ),
                 React.createElement(
                     "div",
@@ -436,7 +436,7 @@ var Cart = React.createClass({
                         React.createElement(
                             "form",
                             { className: "total__checkoutForm" },
-                            React.createElement("input", { href: "", type: "submit", id: "Checkout-btn", value: "Продолжить покупки", className: "total__checkoutBtn", onClick: that.props.cartLinkClickHandler })
+                            React.createElement("input", { href: "#itemslist", type: "submit", id: "Checkout-btn", value: "Продолжить покупки", className: "total__checkoutBtn", onClick: that.props.cartLinkClickHandler })
                         )
                     ),
                     React.createElement(
@@ -470,14 +470,14 @@ var CartTotal = React.createClass({
             React.createElement(
                 "h3",
                 { className: "cartSum__summary" },
-                "1800$"
+                " "
             ),
             React.createElement(
                 "div",
                 { className: "cartSum__checkoutBlock" },
                 React.createElement(
                     "form",
-                    { "class": "cartSum__form" },
+                    { className: "cartSum__form" },
                     React.createElement("input", { href: "#addressform", className: "cartSum__cartButton", type: "submit", value: "Перейти к оформлению заказа", onClick: this.props.cartLinkClickHandler })
                 )
             )
@@ -695,36 +695,36 @@ var Page = React.createClass({
         return {
             currentPage: Helpers.getPageName(),
             params: Helpers.getUrlParams(),
-            cart: this.state && this.state.cart ? this.state.cart : []
+            cart: []
         };
     },
     getDefaultProps: function () {
         return {
             categories: [{ description: 'Класc. гитары', img: 'gklass.jpg', href: '#itemslist?cat=classic' }, { description: 'Акк. гитары', img: 'gakust3.jpg', href: '#itemslist?cat=acoustic' }, { description: 'Электро-акк. гитары', img: 'gelecakust.jpg', href: '#itemslist?cat=elacc' }, { description: 'Электрогитары', img: 'gelectro.jpg', href: '#itemslist?cat=electro' }, { description: 'Басс. гитары', img: 'gbass.jpg', href: '#itemslist?cat=bass' }, { description: 'Укулеле', img: 'gukulele.jpg', href: '#itemslist?cat=ukulele' }, { description: 'Банджо', img: 'gbanjo.jpg', href: '#itemslist?cat=bango' }, { description: 'Балалайки', img: 'gbalalaika.png', href: '#itemslist?cat=balalaikis' }],
-            products: [{ id: 0, href: '#itemscard?id=0', category: 'classic', src: 'gklass.jpg', name: 'Martin D35', price: ' 500$',
+            products: [{ id: 0, href: '#itemscard?id=0', category: 'classic', src: 'gklass.jpg', name: 'Martin D35', price: 500,
                 description: 'Именная модель легендарного Джонни Кэша, ключевой фигуры в музыке кантри и рокабилли, и одного из самых влиятельных музыкантов XX века.',
-                fulldescription: 'Гитара базируется на модели D-35 и выполнена в чёрном цвете с перламутровыми звёздами в качестве маркеров грифа. Martin D35 - известная своими мощными басами модель дредноут, нижняя дека изготовлена из 3-х частей индийского палисандра, верх из ели.                    Только массивы ценных пород, профессиональная гитара для ценителей качественного живого звука с насыщенным тембром.' }, { id: 1, href: '#itemscard?id=1', category: 'classic', src: 'gklass.jpg', name: 'Martin D35', price: ' 600$',
+                fulldescription: 'Гитара базируется на модели D-35 и выполнена в чёрном цвете с перламутровыми звёздами в качестве маркеров грифа. Martin D35 - известная своими мощными басами модель дредноут, нижняя дека изготовлена из 3-х частей индийского палисандра, верх из ели.                    Только массивы ценных пород, профессиональная гитара для ценителей качественного живого звука с насыщенным тембром.' }, { id: 1, href: '#itemscard?id=1', category: 'classic', src: 'gklass.jpg', name: 'Martin D35', price: 600,
                 description: 'Именная модель легендарного Джонни Кэша, ключевой фигуры в музыке кантри и рокабилли, и одного из самых влиятельных музыкантов XX века.',
-                fulldescription: 'Гитара базируется на модели D-35 и выполнена в чёрном цвете с перламутровыми звёздами в качестве маркеров грифа. Martin D35 - известная своими мощными басами модель дредноут, нижняя дека изготовлена из 3-х частей индийского палисандра, верх из ели.                    Только массивы ценных пород, профессиональная гитара для ценителей качественного живого звука с насыщенным тембром.' }, { id: 2, href: '#itemscard?id=2', category: 'acoustic', src: 'gakust.jpg', name: 'FENDER F-1020S', price: ' 600$',
+                fulldescription: 'Гитара базируется на модели D-35 и выполнена в чёрном цвете с перламутровыми звёздами в качестве маркеров грифа. Martin D35 - известная своими мощными басами модель дредноут, нижняя дека изготовлена из 3-х частей индийского палисандра, верх из ели.                    Только массивы ценных пород, профессиональная гитара для ценителей качественного живого звука с насыщенным тембром.' }, { id: 2, href: '#itemscard?id=2', category: 'acoustic', src: 'gakust.jpg', name: 'FENDER F-1020S', price: 600,
                 description: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом.',
-                fulldescription: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом и, вероятно, один из наиболее доступных вариантов инструментов данной категории на рынке.' }, { id: 3, href: '#itemscard?id=2', category: 'acoustic', src: 'gakust.jpg', name: 'FENDER F-1020S', price: ' 600$',
+                fulldescription: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом и, вероятно, один из наиболее доступных вариантов инструментов данной категории на рынке.' }, { id: 3, href: '#itemscard?id=2', category: 'acoustic', src: 'gakust.jpg', name: 'FENDER F-1020S', price: 600,
                 description: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом.',
-                fulldescription: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом и, вероятно, один из наиболее доступных вариантов инструментов данной категории на рынке.' }, { id: 4, href: '#itemscard?id=4', category: 'elacc', src: 'gelecakust.jpg', name: 'YAMAHA APX 700II-12 BL', price: ' 600$',
+                fulldescription: 'Модель FENDER F-1020S DREADNOUGHT NATURAL представляет собой одну из лучших акустических гитар, обладающих массивным и особенно твердым корпусом и, вероятно, один из наиболее доступных вариантов инструментов данной категории на рынке.' }, { id: 4, href: '#itemscard?id=4', category: 'elacc', src: 'gelecakust.jpg', name: 'YAMAHA APX 700II-12 BL', price: 600,
                 description: 'Главным отличием электроакустических гитар Yamaha является великолепное усиленное звучание в сочетании с удобством игры и настроек.',
-                fulldescription: 'Главным отличием электроакустических гитар Yamaha является великолепное усиленное звучание в сочетании с удобством игры и настроек. Идеальное решение, если нужен идеальный результат! При разработке гитар серии APX основной акцент делался на игровые качества. Тонкий корпус и вырезы обеспечивают удобный доступ к верхним ладам и плавный переход между электрическим и акустическим звучанием. Специальный дизайн креплений в серии APX обеспечивает великолепный отклик и звучание с крепкой серединой и верхами. Также особенностью гитар серии APX, в дополнение к прекрасному звучанию, является то, что они отлично подходят для соло-исполнения.' }, { id: 5, href: '#itemscard?id=5', category: 'electro', src: 'gelectro.jpg', name: 'SCHECTER SYNYSTER CUSTOM-S BLK/SILV', price: ' 600$',
+                fulldescription: 'Главным отличием электроакустических гитар Yamaha является великолепное усиленное звучание в сочетании с удобством игры и настроек. Идеальное решение, если нужен идеальный результат! При разработке гитар серии APX основной акцент делался на игровые качества. Тонкий корпус и вырезы обеспечивают удобный доступ к верхним ладам и плавный переход между электрическим и акустическим звучанием. Специальный дизайн креплений в серии APX обеспечивает великолепный отклик и звучание с крепкой серединой и верхами. Также особенностью гитар серии APX, в дополнение к прекрасному звучанию, является то, что они отлично подходят для соло-исполнения.' }, { id: 5, href: '#itemscard?id=5', category: 'electro', src: 'gelectro.jpg', name: 'SCHECTER SYNYSTER CUSTOM-S BLK/SILV', price: 600,
                 description: 'Компания SCHECTER очень гордиться не только многочисленным списком артистов, но и своей коллекцией моделей 2014 Artist.',
-                fulldescription: 'Компания SCHECTER очень гордиться не только многочисленным списком артистов, но и своей коллекцией моделей 2014 Artist. В этой серии представлены только качественные модели с дизайном и точностью исполнения гитар, на которых эти парни играют на сцене. Здесь те же самые гитары какие украшают сцену и студии таких артистов как The Cure, Avenged Sevenfold, Jeff Loomis и других. ' }, { id: 6, href: '#itemscard?id=6', category: 'bass', src: 'gbass.jpg', name: 'SCHECTER HELLRAISER EXTREME-4 STBLS', price: ' 600$',
+                fulldescription: 'Компания SCHECTER очень гордиться не только многочисленным списком артистов, но и своей коллекцией моделей 2014 Artist. В этой серии представлены только качественные модели с дизайном и точностью исполнения гитар, на которых эти парни играют на сцене. Здесь те же самые гитары какие украшают сцену и студии таких артистов как The Cure, Avenged Sevenfold, Jeff Loomis и других. ' }, { id: 6, href: '#itemscard?id=6', category: 'bass', src: 'gbass.jpg', name: 'SCHECTER HELLRAISER EXTREME-4 STBLS', price: 600,
                 description: 'Вдохновленные Hellraiser Extreme гитарами, эти бас-гитары такие же угрожающие. ',
-                fulldescription: 'Вдохновленные Hellraiser Extreme гитарами, эти бас-гитары такие же угрожающие. Характеризуясь цельным корпусом из махагона с кленовым верхом и EMG звукоснимателями, эти бас-гитары имеют ударный нижний регистр и в дополнение к кленовому верху черная/белая/черная окантовка и готический крест дают ошеломительный вид, который прекрасно сочетается с мощным тоном.' }, { id: 7, href: '#itemscard?id=7', category: 'ukulele', src: 'gukulele.jpg', name: 'HOHNER LANIKAI UCKTEQ', price: ' 600$',
+                fulldescription: 'Вдохновленные Hellraiser Extreme гитарами, эти бас-гитары такие же угрожающие. Характеризуясь цельным корпусом из махагона с кленовым верхом и EMG звукоснимателями, эти бас-гитары имеют ударный нижний регистр и в дополнение к кленовому верху черная/белая/черная окантовка и готический крест дают ошеломительный вид, который прекрасно сочетается с мощным тоном.' }, { id: 7, href: '#itemscard?id=7', category: 'ukulele', src: 'gukulele.jpg', name: 'HOHNER LANIKAI UCKTEQ', price: 600,
                 description: 'UCKTEQ – тенор электроакустическое укулеле, которое характеризуется корпусом из дерева Коа, накладкой из палисандра, литыми колками и кленовыми кантами на корпусе. ',
-                fulldescription: 'UCKTEQ – тенор электроакустическое укулеле, которое характеризуется корпусом из дерева Коа, накладкой из палисандра, литыми колками и кленовыми кантами на корпусе. Укулеле имеет вырез и звукосниматель Shadow® JW2 active Nanoflex.Коа – редкое гавайское дерево, которое знаменито своими особенными волнистыми волокнами. Дерево произрастает только на острове Оаху, это великолепное дерево красной породы используется на всей Lanikai серии.' }, { id: 8, href: '#itemscard?id=8', category: 'bango', src: 'gbanjo.jpg', name: 'FENDER CONCERT TONE BANJO', price: ' 600$',
+                fulldescription: 'UCKTEQ – тенор электроакустическое укулеле, которое характеризуется корпусом из дерева Коа, накладкой из палисандра, литыми колками и кленовыми кантами на корпусе. Укулеле имеет вырез и звукосниматель Shadow® JW2 active Nanoflex.Коа – редкое гавайское дерево, которое знаменито своими особенными волнистыми волокнами. Дерево произрастает только на острове Оаху, это великолепное дерево красной породы используется на всей Lanikai серии.' }, { id: 8, href: '#itemscard?id=8', category: 'bango', src: 'gbanjo.jpg', name: 'FENDER CONCERT TONE BANJO', price: 600,
                 description: 'Fender Concert Tone Banjo – это современная интерпретация классических банджо FENDER Concert Tone 60-х годов прошлого века.',
-                fulldescription: 'Fender Concert Tone Banjo – это современная интерпретация классических банджо FENDER Concert Tone 60-х годов прошлого века. Серия Concert Tone ведет свою историю с 1968 года, уже тогда она стала очень популярной. Как и модели банджо от Fender конца 1960-х годов, новая модель была тщательно продумана и разработана, имеет элегантный внешний вид, красивый и богатый звук, а также отличается удобством при игре. Не важно, являетесь ли Вы начинающим музыкантом или опытным профессионалом, банджо производства Fender способны порадовать своим четким, резким, звенящим, «искрящимся» звуком.Данная модель Concert Tone Banjo представляет из себя блюграсс-банджо, имеет пять струн и длинную мензуру (69,6 см). Пятая струна – укороченная, натянута на отдельном колке, расположенном на грифе, на пятом ладу.Для производства инструмента были использованы самые высококачественные материалы и комплектующие. Корпус и гриф выполнены из древесины красного дерева с глянцевой полиуретановой отделкой. Резонатор – также из красного дерева, ламинированный. На грифе 22 лада, накладка - палисандровая. Верхний порожек сделан из искусственной кости, бридж - клен/черное дерево.Новая модель Concert Tone Banjo имеет стильный внешний вид «не стареющей классики». Элегантный облик банджо гармонично дополняет хромированная фурнитура и инкрустация ладов классическими белыми точками. Голова грифа – контрастная черная, с акриловым покрытием и золотым логотипом «Fender».' }, { id: 9, href: '#itemscard?id=9', category: 'balalaikis', src: 'gbalalaika.png', name: 'VASCO BAS-80', price: ' 600$',
+                fulldescription: 'Fender Concert Tone Banjo – это современная интерпретация классических банджо FENDER Concert Tone 60-х годов прошлого века. Серия Concert Tone ведет свою историю с 1968 года, уже тогда она стала очень популярной. Как и модели банджо от Fender конца 1960-х годов, новая модель была тщательно продумана и разработана, имеет элегантный внешний вид, красивый и богатый звук, а также отличается удобством при игре. Не важно, являетесь ли Вы начинающим музыкантом или опытным профессионалом, банджо производства Fender способны порадовать своим четким, резким, звенящим, «искрящимся» звуком.Данная модель Concert Tone Banjo представляет из себя блюграсс-банджо, имеет пять струн и длинную мензуру (69,6 см). Пятая струна – укороченная, натянута на отдельном колке, расположенном на грифе, на пятом ладу.Для производства инструмента были использованы самые высококачественные материалы и комплектующие. Корпус и гриф выполнены из древесины красного дерева с глянцевой полиуретановой отделкой. Резонатор – также из красного дерева, ламинированный. На грифе 22 лада, накладка - палисандровая. Верхний порожек сделан из искусственной кости, бридж - клен/черное дерево.Новая модель Concert Tone Banjo имеет стильный внешний вид «не стареющей классики». Элегантный облик банджо гармонично дополняет хромированная фурнитура и инкрустация ладов классическими белыми точками. Голова грифа – контрастная черная, с акриловым покрытием и золотым логотипом «Fender».' }, { id: 9, href: '#itemscard?id=9', category: 'balalaikis', src: 'gbalalaika.png', name: 'VASCO BAS-80', price: 600,
                 description: 'Именная модель легендарного Джонни Кэша, ключевой фигуры в музыке кантри и рокабилли, и одного из самых влиятельных музыкантов XX века.',
                 fulldescription: 'Балалайка-бас VASCO BAS-80 - 3-х струнная,верхняя дека – ель массив, корпус и гриф – махагон массив,накладка на гриф – африканское черное дерево,накладной панцирь, отделка - глянцевый лак,Производство: Португалия' }],
             navigation: [{ href: '', name: 'Класcические гитары' }, { href: '', name: 'Аккустические гитары' }, { href: '', name: 'Электро-акк. гитары' }, { href: '', name: 'Электрогитары' }, { href: '', name: 'Басс. гитары' }, { href: '', name: 'Укулеле' }, { href: '', name: 'Банджо' }, { href: '', name: 'Балалайки' }],
             cardImages: [{ id: 0, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 1, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 2, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 3, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 4, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 5, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 6, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 7, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 8, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }, { id: 9, bigimage: 'git.jpg', smallimg1: 'gakust3.jpg', smallimg2: 'git2.jpg', smallimg3: 'gakust5.jpg', arrowRigth: 'arrow_rigth.png', arrowLeft: 'arrow_left.png' }],
-            cart: [{ img: 'u1.jpg', name: 'Martin Guitars D351', price: '450$' }, { img: 'u1.jpg', name: 'Martin Guitars D352', price: '450$' }, { img: 'u1.jpg', name: 'Martin Guitars D353', price: '450$' }, { img: 'u1.jpg', name: 'Martin Guitars D354', price: '450$' }]
+            cart: [{ img: 'u1.jpg', name: 'Martin Guitars D351' }, { img: 'u1.jpg', name: 'Martin Guitars D352' }, { img: 'u1.jpg', name: 'Martin Guitars D353' }, { img: 'u1.jpg', name: 'Martin Guitars D354' }]
         };
     },
     updatePage: function (e) {
@@ -759,11 +759,6 @@ var Page = React.createClass({
             }
         }
     },
-    deleteCartBlock: function () {
-        $('.gitarChoose__delete').on('click', function () {
-            $('#outer').remove();
-        });
-    },
     addToCart: function (e) {
         var id = e.target.getAttribute('data-prodid');
         var selectValue = e.target.form ? e.target.form.getElementsByClassName('quantity_selection')[0].value : null;
@@ -787,7 +782,7 @@ var Page = React.createClass({
             if (this.props.products[i].id == id) {
                 var updatedCart = this.state.cart;
                 var product = this.props.products[i];
-                product.quantity = 1;
+                product.quantity = parseInt(selectValue);
 
                 updatedCart.push(product);
 
@@ -800,6 +795,29 @@ var Page = React.createClass({
                 console.log(this.state.cart);
             }
         }
+    },
+    deleteCartBlock: function () {
+        var updatedCart = this.state.cart;
+        if (updatedCart) {
+            var cartItem = document.getElementById("outer");
+            cartItem.parentNode.removeChild(cartItem);
+        }
+        this.setState({
+            currentPage: this.state.currentPage,
+            params: this.state.params,
+            cart: updatedCart
+
+        });
+        this.sumToCart();
+        console.log(this.state.cart);
+    },
+    sumToCart: function () {
+        var objects = this.state.cart;
+        var result = 0;
+        for (var i = 0; i < objects.length; i++) {
+            result = result + objects[i].quantity * objects[i].price;
+        }
+        document.getElementsByClassName("total__header")[0].innerHTML = "ИТОГО: " + result;
     },
     render: function () {
         return React.createElement(
@@ -815,8 +833,8 @@ var Page = React.createClass({
                 this.state.currentPage == '#itemscard' ? React.createElement(BreadCrumbs, { product: this.getProductById(this.state.params.id), crumbsLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#itemscard' ? React.createElement(CardImages, { cardImages: this.getImagesById(this.state.params.id) }) : null,
                 this.state.currentPage == '#itemscard' ? React.createElement(CardDescription, { product: this.getProductById(this.state.params.id), addToCartHandler: this.addToCart, itemcardLinkClickHandler: this.updatePage }) : null,
-                this.state.currentPage == '#cart' ? React.createElement(Cart, { cart: this.state.cart, cartLinkClickHandler: this.updatePage, cartButtonDeleteBLock: this.deleteCartBlock }) : null,
-                this.state.currentPage == '#cart' ? React.createElement(CartTotal, { cart: this.props.cart, cartLinkClickHandler: this.updatePage }) : null,
+                this.state.currentPage == '#cart' ? React.createElement(Cart, { cart: this.state.cart, cartLinkClickHandler: this.updatePage, cartButtonDeleteBLock: this.deleteCartBlock, cartSum: this.sumToCart }) : null,
+                this.state.currentPage == '#cart' ? React.createElement(CartTotal, { cart: this.props.cart, cartLinkClickHandler: this.updatePage, cartSum: this.sumToCart }) : null,
                 this.state.currentPage == '#addressform' ? React.createElement(Addressform, { addresLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#orderform' ? React.createElement(Orderform, { orderLinkClickHandler: this.updatePage }) : null,
                 this.state.currentPage == '#success' ? React.createElement(Success, null) : null,
@@ -956,4 +974,32 @@ var Success = React.createClass({
         );
     }
 });
+//render: function() {
+//    var results = this.props.results;
+//    return (
+//        <ol>
+//            {results.map(function(result) {
+//                return <li key={result.id}>{result.text}</li>;
+//                })}
+//        </ol>
+//    );
+//}
+//
+//
+//var ListItemWrapper = React.createClass({
+//    render: function() {
+//        return <li>{this.props.data.text}</li>;
+//    }
+//});
+//var MyComponent = React.createClass({
+//    render: function() {
+//        return (
+//            <ul>
+//                {this.props.results.map(function(result) {
+//                    return <ListItemWrapper key={result.id} data={result}/>;
+//                    })}
+//            </ul>
+//        );
+//    }
+//});
 //# sourceMappingURL=app.js.map

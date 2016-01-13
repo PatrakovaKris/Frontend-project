@@ -5,10 +5,10 @@ var Cart = React.createClass({
                 var options = [];
                 for(var i=1; i<=cart.quantity+3; i++){
                     var n = +i;
-                    options.push(<option value={i} selected={(i==cart.quantity) ? true : false}>{i}</option>);
+                    options.push(<option value={i} key={i}>{i}</option>);
                 }
                 return (
-                    <section id='outer' className="main__cartList cartList" key={key}>
+                    <section id='outer' className="main__cartList cartList" key ={key}>
                         <div className="cartList__gitarDescription gitarDescription">
                             <div className="gitarDescription__imageBlock">
                                 <img className="gitarDescription__image" src={Helpers.getFullPath(cart.src)} />
@@ -21,7 +21,7 @@ var Cart = React.createClass({
                         <div className="cartList__gitarChoose gitarChoose">
                             <div className="gitarChoose__quantity">
                                 <form className="gitarChoose__quantityForm">Количество
-                                    <select  name="menu" size="1">
+                                    <select  defaultValue={cart.quantity} className="menu" size="1">
                                         {options}
                                     </select>
                                 </form>
@@ -39,11 +39,11 @@ var Cart = React.createClass({
             <section className="cart">
                 {cartlist}
                 <div className="main__total total">
-                    <h3 className="total__header">Итого: 1800$</h3>
+                    <h3 className="total__header"  href='#' >ИТОГО:  </h3>
                     <div className="total__buttons">
                         <div className="total__checkout">
                             <form className="total__checkoutForm">
-                                <input href='' type="submit" id="Checkout-btn" value="Продолжить покупки" className="total__checkoutBtn" onClick={that.props.cartLinkClickHandler}/>
+                                <input href='#itemslist' type="submit" id="Checkout-btn" value="Продолжить покупки" className="total__checkoutBtn" onClick={that.props.cartLinkClickHandler}/>
                             </form>
                         </div>
                         <div className="total__continue">

@@ -10,7 +10,7 @@ var CardDescription = React.createClass({
                     <form className="quantity__form" onSubmit={function(e){e.preventDefault();}}>
                         <p className="quantity__header">Количество</p>
                         <select className="quantity_selection" name="menu" size="1">
-                            <option selected="selected" value="1">1</option>
+                            <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
